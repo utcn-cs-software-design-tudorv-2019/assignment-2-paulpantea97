@@ -1,13 +1,21 @@
 package com.paulpantea.assignment_2;
 
-import org.springframework.boot.SpringApplication;
-import org.springframework.boot.autoconfigure.SpringBootApplication;
+import com.paulpantea.assignment_2.controller.LoginController;
+import org.springframework.boot.builder.SpringApplicationBuilder;
+import org.springframework.context.ConfigurableApplicationContext;
 
-@SpringBootApplication
+import java.awt.*;
+
 public class Assignment2Application {
 
 	public static void main(String[] args) {
-		SpringApplication.run(Assignment2Application.class, args);
+
+		ConfigurableApplicationContext ctx = new SpringApplicationBuilder(LoginController.class)
+				.headless(false).run(args);
+
+		EventQueue.invokeLater(() -> {
+			LoginController ex = ctx.getBean(LoginController.class);
+		});
 	}
 
 }

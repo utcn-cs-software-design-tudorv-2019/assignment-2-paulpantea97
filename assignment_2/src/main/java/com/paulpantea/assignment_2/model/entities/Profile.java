@@ -1,8 +1,11 @@
 package com.paulpantea.assignment_2.model.entities;
 
+import lombok.Data;
+
 import javax.persistence.*;
 
 @Entity
+@Data
 public class Profile {
 
     @Id
@@ -37,45 +40,6 @@ public class Profile {
         this.grade = grade;
     }
 
-    public void setId(Integer id) {
-        this.id = id;
-    }
-
-    public Integer getId() {
-        return id;
-    }
-
-    public Student getStudent() {
-        return student;
-    }
-
-    public void setStudent(Student student) {
-        this.student = student;
-    }
-
-    public Course getCourse() {
-        return course;
-    }
-
-    public void setCourse(Course course) {
-        this.course = course;
-    }
-
-    public Groups getGroup() {
-        return groups;
-    }
-
-    public void setGroup(Groups group) {
-        this.groups= group;
-    }
-
-    public int getGrade() {
-        return grade;
-    }
-
-    public void setGrade(int grade) {
-        this.grade = grade;
-    }
     @Override
     public String toString() {
         return "Profile ("+student +","+ course+","+ groups+","+ grade+")\n";
